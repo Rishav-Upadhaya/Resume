@@ -256,7 +256,22 @@
       }
 
       .contact-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Adjust contact cards for grid display */
+      .contact-card {
+        flex: 1;
+        min-width: unset;
+        max-width: unset;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        height: auto;
       }
 
       /* Unified Section Title Styling */
@@ -1419,7 +1434,6 @@
         }
       }
 
-      /* Responsive adjustments */
       @media (max-width: 768px) {
         .hero {
           padding-top: 70px; /* Account for navbar height */
@@ -1900,174 +1914,64 @@
         opacity: 1;
       }
 
-      /* Enhanced contact grid after removing the form */
-      .contact-grid {
+      /* Add this to your existing styles section */
+      .experience-grid {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 1.5rem;
+        position: relative;
+        gap: 2.5rem;
         width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
-        padding-bottom: 1rem; /* Space for potential scrollbar */
+        overflow: hidden;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* Adjust contact cards for single line display */
-      .contact-card {
-        flex: 1;
-        min-width: 220px; /* Minimum width to ensure readability */
-        max-width: 280px; /* Maximum width to maintain consistency */
-        padding: 2rem 1.5rem;
-        text-align: center;
-        height: auto; /* Let height adjust to content */
+      .experience-card {
+        flex: 0 0 calc(50% - 1.25rem);
+        min-width: 300px;
+        opacity: 1;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, opacity;
       }
 
-      /* Make icons a bit smaller for better fit */
-      .contact-card i {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
+      .experience-card.sliding {
+        opacity: 0.5;
+        transform: scale(0.95);
       }
 
-      /* Make text smaller for better fit */
-      .contact-card p {
-        font-size: 0.9rem;
-        word-break: break-word; /* Handle long email addresses */
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 992px) {
-        .contact-grid {
-          justify-content: flex-start; /* Left align to ensure cards are visible when scrolling */
-          gap: 1rem;
-        }
-
-        .contact-card {
-          min-width: 200px;
-        }
-      }
-
-      /* For very small screens, increase padding to make scrolling evident */
-      @media (max-width: 576px) {
-        .contact-grid {
-          padding: 0.5rem;
-          margin: 0 -1rem; /* Extend slightly outside container */
-          width: calc(100% + 2rem);
-        }
-
-        .contact-card {
-          min-width: 180px;
-        }
-      }
-
-      /* Add this for a better scrolling experience on the contact grid */
-      document.addEventListener('DOMContentLoaded', function() {
-        const contactGrid = document.querySelector('.contact-grid');
-
-        if (contactGrid && window.innerWidth < 992) {
-          // Add subtle hint that the cards are scrollable
-          contactGrid.style.cursor = 'grab';
-
-          // Add visual indicators to show scrollability
-          const scrollIndicator = document.createElement('div');
-          scrollIndicator.classList.add('scroll-indicator');
-          scrollIndicator.innerHTML = '<span>&larr;</span><span>&rarr;</span>';
-          contactGrid.parentElement.appendChild(scrollIndicator);
-
-          // Add styles for the scroll indicator
-          const style = document.createElement('style');
-          style.textContent = `
-            .scroll-indicator {
-              display: flex;
-              justify-content: center;
-              gap: 1rem;
-              margin-top: 1rem;
-              color: var(--tertiary-color);
-              font-size: 1.2rem;
-              animation: pulse 2s infinite;
-            }
-
-            @keyframes pulse {
-              0%, 100% { opacity: 0.5; }
-              50% { opacity: 1; }
-            }
-
-            .contact-grid::-webkit-scrollbar {
-              height: 5px;
-            }
-
-            .contact-grid::-webkit-scrollbar-track {
-              background: rgba(30, 30, 45, 0.5);
-              border-radius: 10px;
-            }
-
-            .contact-grid::-webkit-scrollbar-thumb {
-              background: var(--tertiary-color);
-              border-radius: 10px;
-            }
-          `;
-          document.head.appendChild(style);
-
-          // Hide scroll indicator after some scrolling
-          contactGrid.addEventListener('scroll', function() {
-            scrollIndicator.style.opacity = '0';
-            scrollIndicator.style.transition = 'opacity 0.5s ease';
-
-            // Remove completely after transition
-            setTimeout(() => {
-              scrollIndicator.remove();
-            }, 500);
-          }, { once: true });
-        }
-      });
-
-      /* Additional styles to ensure content is vertically aligned */
-      .contact-card {
+      .experience-nav {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        height: 160px; /* Fixed height for consistent card size */
+        gap: 1rem;
+        margin-top: 2rem;
       }
 
-      /* Ensure icons and text are properly centered */
-      .contact-card i {
-        margin-bottom: 1rem;
-      }
-
-      .contact-card p {
-        margin: 0;
-        line-height: 1.4;
-      }
-
-      /* Optional: Add dividers between cards */
-      .contact-grid {
-        position: relative;
-        justify-content: space-evenly;
-      }
-
-      .contact-card {
-        position: relative;
-        border: none; /* Remove existing border */
-        box-shadow: none; /* Remove existing shadow */
+      .experience-nav button {
         background: transparent;
+        border: 2px solid var(--tertiary-color);
+        color: var(--tertiary-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
       }
 
-      .contact-card:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        top: 20%;
-        right: -0.75rem;
-        height: 60%;
-        width: 1px;
-        background: linear-gradient(to bottom, transparent, var(--tertiary-color), transparent);
+      .experience-nav button:hover {
+        background: var(--tertiary-color);
+        color: var(--dark-section-bg);
+        transform: translateY(-3px);
       }
 
-      @media (max-width: 768px) {
-        .contact-card:not(:last-child)::after {
-          right: -0.5rem;
-        }
+      .experience-nav button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
       }
     </style>
   </head>
@@ -2191,17 +2095,29 @@
         </div>
         <div class="experience-grid">
           <div class="experience-card">
+            <h3>Leapfrog Student Partnership Program</h3>
+            <h4>Leapfrog Technology (April 2024 - Present)</h4>
+            <ul>
+              <li>Currently participating in the student partnership program</li>
+              <li>Working with cutting-edge web technologies and frameworks</li>
+              <li>Collaborating with industry professionals on real projects</li>
+              <li>Learning enterprise-level software development practices</li>
+            </ul>
+          </div>
+          <div class="experience-card">
             <h3>UI Designer & Junior Developer</h3>
             <h4>HOBES TECH Pvt. Ltd (April 2023 - Nov 2023)</h4>
             <ul>
-              <li>
-                Designed interfaces using Figma & developed frontend components
-              </li>
+              <li>Designed interfaces using Figma & developed frontend components</li>
               <li>Integrated Django backends with RESTful APIs</li>
               <li>Researched ML model integration for web applications</li>
               <li>Optimized MySQL databases for high performance</li>
             </ul>
           </div>
+        </div>
+        <div class="experience-nav">
+          <button id="prevExp" aria-label="Previous experience"><i class="fas fa-chevron-left"></i></button>
+          <button id="nextExp" aria-label="Next experience"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
@@ -2222,7 +2138,7 @@
               <div class="education-icon">
                 <i class="fas fa-graduation-cap"></i>
               </div>
-              <h3>Bachelor of Computer Science</h3>
+              <h3>Bachelor of Computer Science and Information Technology</h3>
               <span class="date">2022-2026</span>
               <div class="details">
                 <p>
@@ -2312,6 +2228,10 @@
           <div class="skill-item">
             <i class="fab fa-python fa-3x"></i>
             <h3>Python</h3>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-cogs fa-3x"></i>
+            <h3>Django</h3>
           </div>
           <div class="skill-item">
             <i class="fab fa-js-square fa-3x"></i>
@@ -2951,6 +2871,46 @@
             }, 300);
           }, 3000);
         }
+      });
+
+      // Add Experience Carousel functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const experienceGrid = document.querySelector('.experience-grid');
+        const cards = document.querySelectorAll('.experience-card');
+        const prevBtn = document.getElementById('prevExp');
+        const nextBtn = document.getElementById('nextExp');
+        let currentIndex = 0;
+
+        function updateNavButtons() {
+          prevBtn.disabled = currentIndex === 0;
+          nextBtn.disabled = currentIndex >= cards.length - 1;
+        }
+
+        function slideCards() {
+          const offset = -currentIndex * (cards[0].offsetWidth + 40); // 40px for gap
+          experienceGrid.style.transform = `translateX(${offset}px)`;
+          updateNavButtons();
+        }
+
+        prevBtn.addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            slideCards();
+          }
+        });
+
+        nextBtn.addEventListener('click', () => {
+          if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            slideCards();
+          }
+        });
+
+        // Initialize button states
+        updateNavButtons();
+
+        // Update on window resize
+        window.addEventListener('resize', slideCards);
       });
     </script>
   </body>
