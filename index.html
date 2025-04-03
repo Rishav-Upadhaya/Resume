@@ -1973,6 +1973,138 @@
         cursor: not-allowed;
         transform: none;
       }
+
+      /* Enhanced Responsiveness for Experience Section */
+      @media (max-width: 768px) {
+        .experience-grid {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .experience-card {
+          flex: 0 0 100%;
+          min-width: 100%;
+        }
+
+        .experience-nav {
+          margin-top: 1.5rem;
+        }
+
+        .experience-nav button {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+
+        .experience-card h3 {
+          font-size: 1.5rem;
+        }
+
+        .experience-card h4 {
+          font-size: 1.1rem;
+        }
+
+        .experience-card ul {
+          padding-left: 1.2rem;
+        }
+
+        .experience-card li {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Enhanced Responsiveness for Education Timeline */
+      @media (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-container.left {
+          left: 0;
+        }
+
+        .timeline-container.right {
+          left: 0;
+        }
+
+        .timeline-container.left::after,
+        .timeline-container.right::after {
+          left: 15px;
+        }
+
+        .timeline-card {
+          padding: 1.5rem;
+        }
+
+        .timeline-card h3 {
+          font-size: 1.4rem;
+        }
+
+        .education-icon {
+          width: 40px;
+          height: 40px;
+          top: -20px;
+          right: 15px;
+        }
+
+        .education-icon i {
+          font-size: 1.2rem;
+        }
+
+        .timeline-card .date {
+          font-size: 0.85rem;
+        }
+
+        .timeline-card .details p {
+          font-size: 0.95rem;
+        }
+
+        .timeline-card .location {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Additional Responsiveness for Smaller Devices */
+      @media (max-width: 480px) {
+        .timeline-container {
+          padding-left: 60px;
+          padding-right: 15px;
+        }
+
+        .timeline::after {
+          left: 26px;
+        }
+
+        .timeline-container.left::after,
+        .timeline-container.right::after {
+          left: 10px;
+        }
+
+        .timeline-card {
+          padding: 1.2rem;
+        }
+
+        .timeline-card h3 {
+          font-size: 1.2rem;
+        }
+
+        .education-icon {
+          width: 35px;
+          height: 35px;
+          top: -17px;
+          right: 10px;
+        }
+
+        .timeline-card .details p {
+          font-size: 0.9rem;
+        }
+      }
     </style>
   </head>
   <body>
