@@ -1920,7 +1920,7 @@
         position: relative;
         gap: 2.5rem;
         width: 100%;
-        overflow: hidden;
+        /* overflow: hidden; */
         transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         transform-style: preserve-3d;
         perspective: 1000px;
@@ -2201,7 +2201,7 @@
         <i class="fas fa-chevron-down"></i>
       </div>
     </section>
-    
+
     <!-- Projects Section -->
     <section id="projects">
       <div class="section-title-container">
@@ -2218,7 +2218,9 @@
         <div class="project-card">
           <h3>Sentiment Analysis</h3>
           <p>
-            Processes IMDB movie reviews and classifies them as positive or negative using classical NLP pipelines and a Logistic Regression model with 88% accuracy.
+            Processes IMDB movie reviews and classifies them as positive or
+            negative using classical NLP pipelines and a Logistic Regression
+            model with 88% accuracy.
           </p>
           <div class="tech-stack">
             <span class="tech-badge">Python</span>
@@ -2230,6 +2232,24 @@
           <a
             href="https://colab.research.google.com/drive/1pdvZTJxgRkIbsRlWvVtw-GZWeuRr6ysv?usp=sharing"
             target="_blank"
+            >View Project</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>DERA</h3>
+          <p>
+            Property rental platform that allows users to list, rent, and manage
+            properties with AI based chatbot assistance.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">OpenAI</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">WebSockets</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+          <a href="https://github.com/Rishav-Upadhaya/DERA" target="_blank"
             >View Project</a
           >
         </div>
@@ -2254,26 +2274,10 @@
           >
         </div>
         <div class="project-card">
-          <h3>DERA</h3>
-          <p>
-            Property rental platform that allows users to list, rent, and manage properties with AI based chatbot assistance.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge">Django</span>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">OpenAI</span>
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">WebSockets</span>
-            <span class="tech-badge">Bootstrap</span>
-          </div>
-          <a href="https://github.com/Rishav-Upadhaya/DERA" target="_blank"
-            >View Project</a
-          >
-        </div>
-        <div class="project-card">
           <h3>Weather Detector</h3>
           <p>
-            Detecting the Weather Conditions using open weather API KEY with Django Views and Request.
+            Detecting the Weather Conditions using open weather API KEY with
+            Django Views and Request.
           </p>
           <div class="tech-stack">
             <span class="tech-badge">Django</span>
@@ -2321,7 +2325,7 @@
           <a href="https://github.com/Rishav-Upadhaya/blogPost" target="_blank"
             >View Project</a
           >
-        </div>        
+        </div>
         <div class="project-card">
           <h3>Grumpies</h3>
           <p>
@@ -2335,6 +2339,21 @@
             <span class="tech-badge">Bootstrap</span>
           </div>
           <a href="https://github.com/Rishav-Upadhaya/Grumpies" target="_blank"
+            >View Project</a
+          >
+        </div>
+        <div class="project-card">
+          <h3>Visit Nepal</h3>
+          <p>
+            AI Powered Tour Planner around Nepal with itinerary generation and
+            personalized tour guide (Pasang).
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge">Vibe Coding</span>
+            <span class="tech-badge">Firebase Studio</span>
+            <span class="tech-badge">Vercel</span>
+          </div>
+          <a href="https://visitnepal.vercel.app/" target="_blank"
             >View Project</a
           >
         </div>
@@ -2353,12 +2372,33 @@
         </div>
         <div class="experience-grid">
           <div class="experience-card">
+            <h3>Backend Developer Intern</h3>
+            <h4>AsterGaze Technologies (May 2025 - Present)</h4>
+            <ul>
+              <li>Build and maintain backend APIs and services in Go</li>
+              <li>
+                Collaborate with the team to architect and scale microservices
+              </li>
+              <li>
+                Work on performance tuning, caching, and database optimization
+              </li>
+              <li>
+                Learn and apply best practices in backend architecture and clean
+                code
+              </li>
+            </ul>
+          </div>
+          <div class="experience-card">
             <h3>Leapfrog Student Partnership Program</h3>
             <h4>Leapfrog Technology (April 2025 - Present)</h4>
             <ul>
-              <li>Currently participating in the student partnership program</li>
+              <li>
+                Currently participating in the student partnership program
+              </li>
               <li>Working with cutting-edge web technologies and frameworks</li>
-              <li>Collaborating with industry professionals on real projects</li>
+              <li>
+                Collaborating with industry professionals on real projects
+              </li>
               <li>Learning enterprise-level software development practices</li>
             </ul>
           </div>
@@ -2366,17 +2406,24 @@
             <h3>UI Designer & Junior Developer</h3>
             <h4>HOBES TECH Pvt. Ltd (April 2023 - Nov 2023)</h4>
             <ul>
-              <li>Designed interfaces using Figma & developed frontend components</li>
-              <li>Prototyped UI for an AI-powered trip planner app </li>
-              <li>Collaborated with backend teams to integrate predictive 
-                models.</li>
+              <li>
+                Designed interfaces using Figma & developed frontend components
+              </li>
+              <li>Prototyped UI for an AI-powered trip planner app</li>
+              <li>
+                Collaborated with backend teams to integrate predictive models.
+              </li>
               <li>Researched ML model integration for web applications</li>
             </ul>
           </div>
         </div>
         <div class="experience-nav">
-          <button id="prevExp" aria-label="Previous experience"><i class="fas fa-chevron-left"></i></button>
-          <button id="nextExp" aria-label="Next experience"><i class="fas fa-chevron-right"></i></button>
+          <button id="prevExp" aria-label="Previous experience">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="nextExp" aria-label="Next experience">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -2525,7 +2572,7 @@
           </div>
           <div class="skill-item">
             <i class="fas fa-database fa-3x"></i>
-            <h3>PostgreSQL/<br>SQLite</h3>
+            <h3>PostgreSQL/<br />SQLite</h3>
           </div>
           <div class="skill-item">
             <i class="fas fa-brain fa-3x"></i>
@@ -3168,11 +3215,11 @@
       });
 
       // Add Experience Carousel functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const experienceGrid = document.querySelector('.experience-grid');
-        const cards = document.querySelectorAll('.experience-card');
-        const prevBtn = document.getElementById('prevExp');
-        const nextBtn = document.getElementById('nextExp');
+      document.addEventListener("DOMContentLoaded", function () {
+        const experienceGrid = document.querySelector(".experience-grid");
+        const cards = document.querySelectorAll(".experience-card");
+        const prevBtn = document.getElementById("prevExp");
+        const nextBtn = document.getElementById("nextExp");
         let currentIndex = 0;
 
         function updateNavButtons() {
@@ -3181,48 +3228,51 @@
         }
 
         function slideCards(direction) {
-          cards.forEach(card => {
-            card.style.opacity = '0';
-            card.classList.add(direction === 'right' ? 'sliding-left' : 'sliding-right');
+          cards.forEach((card) => {
+            card.style.opacity = "0";
+            card.classList.add(
+              direction === "right" ? "sliding-left" : "sliding-right"
+            );
           });
 
           setTimeout(() => {
             const offset = -currentIndex * (cards[0].offsetWidth + 40);
             experienceGrid.style.transform = `translateX(${offset}px)`;
-            
-            cards.forEach(card => {
-              card.style.opacity = '1';
-              card.classList.remove('sliding-left', 'sliding-right');
+
+            cards.forEach((card) => {
+              card.style.opacity = "1";
+              card.classList.remove("sliding-left", "sliding-right");
             });
           }, 300);
 
           updateNavButtons();
         }
 
-        prevBtn.addEventListener('click', () => {
+        prevBtn.addEventListener("click", () => {
           if (currentIndex > 0) {
             currentIndex--;
-            slideCards('left');
+            slideCards("left");
           }
         });
 
-        nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener("click", () => {
           if (currentIndex < cards.length - 1) {
             currentIndex++;
-            slideCards('right');
+            slideCards("right");
           }
         });
 
         // Initialize animation for first load
-        cards.forEach(card => {
-          card.style.animation = 'cardAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+        cards.forEach((card) => {
+          card.style.animation =
+            "cardAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards";
         });
 
         // Initialize button states
         updateNavButtons();
 
         // Update on window resize
-        window.addEventListener('resize', () => {
+        window.addEventListener("resize", () => {
           const offset = -currentIndex * (cards[0].offsetWidth + 40);
           experienceGrid.style.transform = `translateX(${offset}px)`;
         });
